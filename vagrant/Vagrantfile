@@ -11,5 +11,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "../data", "/vagrant", disabled: true
 
+  config.vm.provision("root", type: "shell",
+                      path: "provision.root.sh",
+                      privileged: true)
+
 end
 
